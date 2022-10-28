@@ -15,7 +15,7 @@ namespace MamaPizzeria
         private string _customerEmail;
         private string _customerAddress;
 
-        public int CustomerIDMethod()
+        public int CustomerID()
         {
             Random customerIDRandom = new Random();
             int customerID = customerIDRandom.Next(100, 1001);
@@ -44,7 +44,7 @@ namespace MamaPizzeria
 
         public Customer(string customerName, string customerPhone, string customerEmail, string customerAddress)
         {
-            _customerID = CustomerIDMethod();
+            _customerID = CustomerID();
             _customerName = customerName;
             _customerPhone = customerPhone;
             _customerEmail = customerEmail;
@@ -53,7 +53,7 @@ namespace MamaPizzeria
 
         public override string ToString()
         {
-            return $"Customer ID: {CustomerIDMethod()}\nName: {CustomerName}\nPhone: {CustomerPhone}\nEmail: {CustomerEmail}\nAddress: {CustomerAddress}";
+            return $"Customer ID: {CustomerID()}\nName: {CustomerName}\nPhone: {CustomerPhone}\nEmail: {CustomerEmail}\nAddress: {CustomerAddress}";
         }
     }
 }
