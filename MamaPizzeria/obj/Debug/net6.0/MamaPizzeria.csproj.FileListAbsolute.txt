@@ -1,0 +1,45 @@
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.exe
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.deps.json
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.runtimeconfig.json
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.dll
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.pdb
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.csproj.AssemblyReference.cache
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.AssemblyInfoInputs.cache
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.AssemblyInfo.cs
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.csproj.CoreCompileInputs.cache
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.dll
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\obj\Debug\net6.0\refint\MamaPizzeria.dll
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.pdb
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.genruntimeconfig.cache
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria\MamaPizzeria\obj\Debug\net6.0\ref\MamaPizzeria.dll
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.exe
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.deps.json
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.runtimeconfig.json
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.dll
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.pdb
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.csproj.AssemblyReference.cache
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.GeneratedMSBuildEditorConfig.editorconfig
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.AssemblyInfoInputs.cache
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.AssemblyInfo.cs
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.csproj.CoreCompileInputs.cache
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.dll
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\refint\MamaPizzeria.dll
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.pdb
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.genruntimeconfig.cache
+D:\Downloads\Chap\MyProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\ref\MamaPizzeria.dll
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.exe
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.deps.json
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.runtimeconfig.json
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.dll
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\bin\Debug\net6.0\MamaPizzeria.pdb
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.csproj.AssemblyReference.cache
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.AssemblyInfoInputs.cache
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.AssemblyInfo.cs
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.csproj.CoreCompileInputs.cache
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.dll
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\refint\MamaPizzeria.dll
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.pdb
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\MamaPizzeria.genruntimeconfig.cache
+C:\Users\milos\Documents\SWC 2022\myProjects\MamaPizzeria_UML2\MamaPizzeria\obj\Debug\net6.0\ref\MamaPizzeria.dll
