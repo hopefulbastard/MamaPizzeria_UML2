@@ -31,7 +31,7 @@ namespace MamaPizzeria
         }
 
 
-        internal Customer CustomerSearch(string customerName)
+        public Customer CustomerSearch(string customerName)
         {
             foreach (Customer item in _customerList)
             {
@@ -41,34 +41,56 @@ namespace MamaPizzeria
             return null;
         }
 
-        internal void AddCustomer(Customer aCustomer)
+        public Customer PhoneCheck(string customerPhone)
         {
-            Customer existingCustomer = CustomerSearch(aCustomer.CustomerIDMethod().ToString());
+            foreach (Customer item in _customerList)
+            {
+                if (customerPhone == item.CustomerPhone)
+                    return item;
+            }
+            return null;
+        }
+
+        public Customer EmailCheck(string customerEmail)
+        {
+            foreach (Customer item in _customerList)
+            {
+                if (customerEmail == item.CustomerEmail)
+                    return item;
+            }
+            return null;
+        }
+
+        public void AddCustomer(Customer aCustomer)
+        {
+            Customer existingCustomer = CustomerSearch(aCustomer.CustomerID().ToString());
             if (existingCustomer == null)
                 _customerList.Add(aCustomer);
         }
 
-        internal void DeleteCustomer(string customerName)
+        public void DeleteCustomer(string customerName)
         {
             Customer item = CustomerSearch(customerName);
-            _customerList.Remove(item);
+            if (item != null) { _customerList.Remove(item); }
+            else { return; }
+
 
         }
-        internal void UpdateCustomer(int customerID, Customer UpdatedCustomer)
+        public void UpdateCustomer(string OldCostumerName, Customer UpdatedCustomer)
         {
             int d = 0;
             while (d < _customerList.Count)
             {
-                if (_customerList[d].CustomerIDMethod() == customerID)
+                if (_customerList[d].CustomerName == OldCostumerName)
                 {
                     _customerList[d] = UpdatedCustomer;
                     break;
+
                 }
-                d++;
+
             }
 
+
         }
-
-
     }
 }

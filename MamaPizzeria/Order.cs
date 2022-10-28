@@ -16,10 +16,11 @@ namespace MamaPizzeria
         private DateTime _dateTime;
         private double _price;
 
-        public int OrderID
+        public int OrderID()
         {
-            get { return _orderID; }
-            set { _orderID = value; }
+            Random orderIDRandom = new Random();
+            int orderID = orderIDRandom.Next(100, 1001);
+            return orderID;
         }
 
         public Pizza OrderPizza
@@ -44,9 +45,9 @@ namespace MamaPizzeria
             get { return _price; }
         }
 
-        public Order(int orderID, Pizza orderPizza, Customer orderCustumer, DateTime dateTime)
+        public Order(Pizza orderPizza, Customer orderCustumer, DateTime dateTime)
         {
-            _orderID = orderID;
+            _orderID = OrderID();
             _orderPizza = orderPizza;
             _orderCustomer = orderCustumer;
             _dateTime = dateTime;

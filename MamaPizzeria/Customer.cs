@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MamaPizzeria
 {
-    internal class Customer
+    public class Customer
     {
         private int _customerID;
         private string _customerName;

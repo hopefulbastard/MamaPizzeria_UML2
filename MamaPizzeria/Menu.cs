@@ -36,21 +36,21 @@ namespace MamaPizzeria
         {
             Console.Clear();
             Console.WriteLine("\t---------------Big Mama Pizzeria-------------------");
-            Console.WriteLine("\t1.\tTilføj pizza til MenuCatalog");
-            Console.WriteLine("\t2.\tFjern pizza fra MenuCatalog");
-            Console.WriteLine("\t3.\tOpdater pizza i MenuCatalog");
-            Console.WriteLine("\t4.\tSøg efter en pizza i MenuCatalog ud fra PizzaNumber");
-            Console.WriteLine("\t5.\tUdskriv alle pizzaer fra MenuCatalog");
+            Console.WriteLine("\t1.\tAdd a pizza to MenuCatalog");
+            Console.WriteLine("\t2.\tRemove a pizza from MenuCatalog");
+            Console.WriteLine("\t3.\tUpdate a pizza in MenuCatalog");
+            Console.WriteLine("\t4.\tUse PizzaNumber to search for a pizza");
+            Console.WriteLine("\t5.\tSee all pizzas in PizzaCatalog");
             Console.WriteLine("\t-----------------------------------");
-            Console.WriteLine("\t6.\tTilføj kunde til CustomerList");
-            Console.WriteLine("\t7.\tFjern kunde fra CustomerList");
-            Console.WriteLine("\t8.\tOpdater kunde i CustomerList");
-            Console.WriteLine("\t9.\tSøg efter en kunde i CustomerList ud fra ID");
-            Console.WriteLine("\t10.\tUdskriv alle kunder fra CustomerList");
-            Console.WriteLine("\tTast 0 for afslut");
+            Console.WriteLine("\t6.\tAdd customer to CustomerList");
+            Console.WriteLine("\t7.\tRemove customer from CustomerList");
+            Console.WriteLine("\t8.\tUpdate customer in CustomerList");
+            Console.WriteLine("\t9.\tUse Customer name to search for a customer");
+            Console.WriteLine("\t10.\tSee all customers in CustomerList");
+            Console.WriteLine("\tPress 0 to end.");
             Console.WriteLine();
             Console.WriteLine();
-            Console.Write("\tIndtast dit valg og tryk derefter enter for at bekræfte:");
+            Console.Write("\tType the number of the command you want to execute and hit enter to confirm:");
             return ReadUserChoice();
 
         }
@@ -107,7 +107,7 @@ namespace MamaPizzeria
                         break;
                     default:
                         Console.Clear();
-                        Console.WriteLine("Der opstod en fejl.");
+                        Console.WriteLine("Something went wrong, please try again.");
                         break;
                 }
                 Console.ReadLine();
@@ -118,124 +118,205 @@ namespace MamaPizzeria
 
         private void AddPizzaToMenu()
         {
-            Console.WriteLine("-----------Tilføj pizza til menuen-----------");
-            Console.WriteLine("Angiv pizzanummer:");
+            Console.WriteLine("-----------Add a pizza to the menu-----------");
+            Console.WriteLine("Add pizza number:");
             int PizzaNumber = int.Parse(Console.ReadLine());
-            Console.WriteLine("Angiv pizzanavn:");
-            string PizzaName = Console.ReadLine();
-            Console.WriteLine("Angiv pizza toppings:");
-            string PizzaToppings = Console.ReadLine();
-            Console.WriteLine("Angiv pizza pris:");
-            double PizzaPrice = double.Parse(Console.ReadLine());
-            Pizza newPizza = new Pizza(PizzaNumber, PizzaName, PizzaToppings, PizzaPrice);
-            _menu.AddPizza(newPizza);
 
-            Console.WriteLine("Pizzaen er tilføjet. Tryk enter for at gå tilbage til start.");
-            Console.ReadLine();
+            Pizza pizza = _menu.MenuSearch(PizzaNumber);
+
+            if (pizza == null)
+            {
+                Console.WriteLine("Add pizza name:");
+                string PizzaName = Console.ReadLine();
+                Console.WriteLine("Add toppings:");
+                string PizzaToppings = Console.ReadLine();
+                Console.WriteLine("Add price:");
+                double PizzaPrice = double.Parse(Console.ReadLine());
+                Pizza newPizza = new Pizza(PizzaNumber, PizzaName, PizzaToppings, PizzaPrice);
+                _menu.AddPizza(newPizza);
+
+                Console.WriteLine("The pizza has been successfully added. Hit enter to return to the menu.");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("It seems this pizza already exists. Try another pizza number or edit a pizza instead. Hit enter to return to the menu.");
+            }
+
         }
 
         private void DeletePizzaFromMenu()
         {
-            Console.WriteLine("----------Slet pizza fra menuen-----------");
-            Console.WriteLine("Angiv pizzanummer:");
+            Console.WriteLine("----------Delete pizza from menu-----------");
+            Console.WriteLine("Pizza number to be deleted:");
             int PizzaNumber = int.Parse(Console.ReadLine());
-            _menu.DeletePizza(PizzaNumber);
 
-            Console.WriteLine("Pizzaen er slettet. Tryk enter for at gå tilbage til start.");
-            Console.ReadLine();
+            Pizza pizza = _menu.MenuSearch(PizzaNumber);
+
+            if (pizza != null)
+            {
+                _menu.DeletePizza(PizzaNumber);
+
+                Console.WriteLine("The pizza has been deleted. Hit enter to return to menu.");
+            }
+            else
+            {
+                Console.WriteLine("This pizza could not be found. Try creating a pizza instead or try again. Hit enter to return to the menu.");
+            }
+
         }
 
         private void UpdateMenuPizza()
         {
-            Console.WriteLine("-----------Opdater pizza-----------");
-            Console.WriteLine("Angiv pizzanummer:");
+            Console.WriteLine("-----------Update a pizza-----------");
+            Console.WriteLine("Pizza number to be updated:");
             int PizzaNumberOld = int.Parse(Console.ReadLine());
             Pizza pizza = _menu.MenuSearch(PizzaNumberOld);
             if (pizza == null)
             {
-                Console.WriteLine("Denne pizza eksisterer ikke. Tryk enter for at gå tilbage til start.");
+                Console.WriteLine("This pizza could not be found. Try creating a pizza instead or try again. Hit enter to return to the menu.");
             }
             else
             {
-                Console.WriteLine("-----------Opdater pizza-----------");
-                Console.WriteLine("Nyt pizza nummer:");
+                Console.WriteLine("-----------Update pizza-----------");
+                Console.WriteLine(pizza);
+                Console.WriteLine("New pizza number:");
                 int PizzaNumber = int.Parse(Console.ReadLine());
-                Console.WriteLine("Nyt pizza navn:");
+                Console.WriteLine("New pizza name:");
                 string PizzaName = Console.ReadLine();
-                Console.WriteLine("Ny(e) pizza topping(s):");
+                Console.WriteLine("New pizza topping(s):");
                 string PizzaToppings = Console.ReadLine();
-                Console.WriteLine("Ny pizza pris:");
+                Console.WriteLine("New pizza price:");
                 double PizzaPrice = double.Parse(Console.ReadLine());
                 Pizza updatedPizza = new Pizza(PizzaNumber, PizzaName, PizzaToppings, PizzaPrice);
                 _menu.UpdatePizza(PizzaNumberOld, updatedPizza);
-                Console.WriteLine("Pizzaen er opdateret. Tryk enter for at gå tilbage til start.");
-                Console.ReadLine();
+                Console.WriteLine("The pizza has been updated. Hit enter to return to the menu.");
 
             }
         }
 
         private void SearchMenu()
         {
-            Console.WriteLine("-----------Søg efter pizza-----------");
-            Console.WriteLine("Angiv pizzanummer:");
+            Console.WriteLine("-----------Look up pizza-----------");
+            Console.WriteLine("Pizza number:");
             int PizzaNumber = int.Parse(Console.ReadLine());
             Pizza pizza = _menu.MenuSearch(PizzaNumber);
             if (pizza == null)
             {
-                Console.WriteLine("Denne pizza eksisterer ikke. Tryk enter for at gå tilbage til start.");
+                Console.WriteLine("This pizza doesn't exist. Try creating a pizza instead or try again. Hit enter to return to the menu.");
             }
             else
             {
                 Console.WriteLine(pizza);
-                Console.WriteLine("Tryk enter for at gå tilbage til start.");
+                Console.WriteLine("Hit enter to return to the menu.");
 
             }
         }
 
         private void AddCustomerToMenu()
         {
-            Console.WriteLine("----------Tilføj kunde----------");
-            Console.WriteLine("Angiv kundenavn:");
+            Console.WriteLine("----------Add customer----------");
+            Console.WriteLine("Add customer name:");
             string CustomerName = Console.ReadLine();
-            Console.WriteLine("Angiv telefonnummer:");
+            Console.WriteLine("Add phone number:");
             string CustomerPhone = Console.ReadLine();
-            Console.WriteLine("Angiv email:");
-            string CustomerEmail = Console.ReadLine();
-            Console.WriteLine("Angiv adresse:");
-            string CustomerAddress = Console.ReadLine();
+            Customer testPhone = _customerList.PhoneCheck(CustomerPhone);
+            if (testPhone != null)
+            {
+                Console.WriteLine("This customer phone number already exists. Try editing a customer instead or try again. Hit enter to return to menu.");
+            }
+            else
+            {
+                Console.WriteLine("Add email:");
+                string CustomerEmail = Console.ReadLine();
+                Customer testEmail = _customerList.EmailCheck(CustomerEmail);
 
-            Customer customer = new Customer(CustomerName, CustomerPhone, CustomerEmail, CustomerAddress);
-            _customerList.AddCustomer(customer);
-            Console.WriteLine("Kunden er tilføjet. Tryk enter for at gå tilbage til start.");
-            Console.ReadLine();
+                if (testEmail != null)
+                {
+                    Console.WriteLine("This customer email already exists. Try editing a customer instead or try again. Hit enter to return to menu.");
+                }
+                else
+                {
+                    Console.WriteLine("Add address:");
+                    string CustomerAddress = Console.ReadLine();
+
+                    Customer customer = new Customer(CustomerName, CustomerPhone, CustomerEmail, CustomerAddress);
+                    _customerList.AddCustomer(customer);
+                    Console.WriteLine("The customer has been added. Hit enter to return to the menu.");
+
+                }
+            }
         }
 
         private void DeleteCustomerFromMenu()
         {
-            Console.WriteLine("----------Slet kunde----------");
-            Console.WriteLine("Angiv kunde navn:");
+            Console.WriteLine("----------Remove customer----------");
+            Console.WriteLine("Customer name:");
             string CustomerName = Console.ReadLine();
-            _customerList.DeleteCustomer(CustomerName);
-            Console.WriteLine("Kunden er slettet. Tryk enter for at gå tilbage til start.");
+            Customer customerDeleted = _customerList.CustomerSearch(CustomerName);
+            if (customerDeleted != null)
+            {
+                _customerList.DeleteCustomer(CustomerName);
+                Console.WriteLine("This customer has been deleted. Hit enter to return to menu.");
+
+            }
+            else
+            {
+                Console.WriteLine("This customer does not exist. Try adding a customer or try again. Hit enter to return to menu.");
+            }
+
         }
 
         private void UpdateCustomer()
         {
-            Console.WriteLine("----------Opdater kunde----------");
-            Console.WriteLine("Angiv kunde navn:");
-            string CustomerName = Console.ReadLine();
-            Customer customer = _customerList.CustomerSearch(CustomerName);
+            Console.WriteLine("----------Update customer----------");
+            Console.WriteLine("Customer old name:");
+            string OldCustomerName = Console.ReadLine();
+            Customer OldCustomer = _customerList.CustomerSearch(OldCustomerName);
 
-            if (customer == null)
+            if (OldCustomer == null)
             {
-                Console.WriteLine("Denne kunde eksisterer ikke. Tryk enter for at gå tilbage til start.");
+                Console.WriteLine("This customer does not exist. Try adding a customer or try again. Hit enter to return to menu.");
             }
 
             else
             {
-                Console.WriteLine("----------Opdater kunde----------");
-                Console.WriteLine(customer);
-                Console.WriteLine("Nyt kunde navn:");
+                Console.WriteLine("----------Update customer----------");
+                Console.WriteLine(OldCustomer);
+                Console.WriteLine("New customer name:");
+                string NewCustomerName = Console.ReadLine();
+                Console.WriteLine("New customer phone:");
+                string NewCustomerPhone = Console.ReadLine();
+                Customer phoneTest = _customerList.PhoneCheck(NewCustomerPhone);
+                if (phoneTest != null)
+                {
+                    Console.WriteLine("This phone is already linked to another customer and can't be used more than once. Hit enter to return to menu and try again.");
+                }
+                else
+                {
+                    Console.WriteLine("New customer email:");
+                    string NewCustomerEmail = Console.ReadLine();
+                    Customer emailTest = _customerList.EmailCheck(NewCustomerEmail);
+                    if (emailTest != null)
+                    {
+                        Console.WriteLine("This email is already linked to a customer and can't be used more than once. Hit enter to return to menu and try again.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("New customer address:");
+                        string NewCustomerAddress = Console.ReadLine();
+
+                        Customer updatedCustomer = new Customer(NewCustomerName, NewCustomerPhone, NewCustomerEmail, NewCustomerAddress);
+
+                        _customerList.UpdateCustomer(OldCustomerName, updatedCustomer);
+                        Console.WriteLine("The customer has been edited.");
+                        Console.WriteLine("Old information:");
+                        Console.WriteLine(OldCustomer);
+                        Console.WriteLine("Updated information:");
+                        Console.WriteLine(updatedCustomer);
+                    }
+                }
+
 
             }
 
@@ -243,18 +324,19 @@ namespace MamaPizzeria
 
         private void SearchCustomerList()
         {
-            Console.WriteLine("-----------Søg efter kunde-----------");
-            Console.WriteLine("Angiv kunde navn:");
+            Console.WriteLine("-----------Look up customer-----------");
+            Console.WriteLine("Look up customer by name:");
             string CustomerName = Console.ReadLine();
             Customer customer = _customerList.CustomerSearch(CustomerName);
             if (customer == null)
             {
-                Console.WriteLine("Denne kunde eksisterer ikke. Tryk enter for at gå tilbage til start.");
+                Console.WriteLine("This customer does not exist. Try creating a customer or try again. Hit space to return to menu.");
             }
             else
             {
+                Console.WriteLine("Result of your search:");
                 Console.WriteLine(customer);
-                Console.WriteLine("Tryk enter for at gå tilbage til start.");
+                Console.WriteLine("Hit enter to return to menu.");
 
             }
         }

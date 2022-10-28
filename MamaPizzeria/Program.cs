@@ -94,9 +94,9 @@
             //Console.WriteLine("Pizza efter PizzaEdit:");
             //menu.PrintMenu();
 
-            //Order o1 = new Order(0001, p1, c1, DateTime.Now);
-            //Order o2 = new Order(0002, p2, c2, DateTime.Now);
-            //Order o3 = new Order(0003, p3, c3, DateTime.Now);
+            //Order o1 = new Order(p1, c1, DateTime.Now);
+            //Order o2 = new Order(p2, c2, DateTime.Now);
+            //Order o3 = new Order(p3, c3, DateTime.Now);
 
             menu.Run();
         }
